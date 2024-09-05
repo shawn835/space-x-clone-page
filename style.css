@@ -1,0 +1,380 @@
+ *,
+ *::after,
+ *::before {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+     text-decoration: none;
+     list-style: none;
+     color: white;
+ }
+
+ body {
+     font-family: "poppins", sans-serif;
+     font-weight: 300;
+     font-size: smaller;
+     font-style: normal;
+     color: white;
+     background-color: black;
+
+ }
+
+ /*header*/
+ header {
+     margin-top: 1.5rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     text-transform: uppercase;
+     position: relative;
+     z-index: 1;
+     font-size: xx-small;
+     position: fixed;
+ }
+
+ .logo {
+     width: 15%;
+     height: auto;
+     margin-left: 30px;
+ }
+
+ .logo img {
+     display: block;
+     height: auto;
+     width: 100%;
+ }
+
+ .navbar ul {
+     display: flex;
+     align-items: center;
+ }
+
+ .navbar ul li {
+     margin-right: 0.5rem;
+     position: relative;
+ }
+
+ .navbar ul li:last-child {
+     margin-left: 1.5rem;
+     margin-right: 4rem;
+ }
+
+
+ .navbar ul li a::after {
+     content: '';
+     position: absolute;
+     right: 0;
+     bottom: 0;
+     height: 1px;
+     background: white;
+     width: 100%;
+     transform: scaleX(0);
+     transition: 0.5s ease-in-out;
+ }
+
+ .navbar ul li a:hover::after {
+     transform: scaleX(1);
+ }
+
+ /*hamburger menu*/
+ .open {
+     position: fixed;
+     top: 1.7rem;
+     right: 20px;
+     width: 30px;
+     height: 25px;
+     background: url('Images/open.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center center;
+     cursor: pointer;
+     z-index: 20;
+     transition: 0.8s ease-in-out;
+
+ }
+
+ /*the X icon*/
+ .open.closed {
+     background: url('Images/icons8-close-24.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center center;
+ }
+
+ /* the popping menu*/
+ .mobile-menu {
+     position: fixed;
+     width: 350px;
+     height: 100%;
+     right: 0;
+     top: 0;
+     z-index: 10;
+     text-transform: uppercase;
+     background-color: black;
+     color: white;
+     font-size: xx-small;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow-x: hidden;
+     transform: translateX(100%);
+     transition: 0.5s ease-in-out;
+ }
+
+ .show-mobile {
+     transform: translateX(0);
+
+ }
+
+ /*dont show on mobile devices*/
+ .expand {
+     display: none;
+ }
+
+ .mobile-menu ul {
+     display: flex;
+     justify-content: center;
+     align-items: end;
+     flex-direction: column;
+     padding: 4px;
+     width: 100%;
+ }
+
+ .mobile-menu ul li {
+     margin-bottom: 15px;
+     width: 100%;
+     text-align: right;
+     border-bottom: 1px dotted grey;
+ }
+
+ .mobile-menu ul li a {
+     transition: ease-in-out 0.3s;
+ }
+
+ .mobile-menu ul li a:hover {
+     color: #aaa;
+
+ }
+
+ /*section A*/
+
+ section {
+     background-position: center-center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     width: 100%;
+     height: 100vh;
+     text-transform: uppercase;
+     position: relative;
+ }
+
+
+ section .inner {
+     position: absolute;
+     bottom: 200px;
+     left: 150px;
+     max-width: 500px;
+ }
+
+
+ section h1 {
+     padding: 0.5rem 0;
+     font-size: xx-large;
+     animation-name: sectionAnime;
+     animation-duration: 0.5s;
+     animation-fill-mode: forwards;
+     animation-timing-function: ease-in-out;
+     animation-delay: 0.2s;
+ }
+
+ section h4 {
+     animation-name: sectionAnime;
+     animation-duration: 0.5s;
+     animation-fill-mode: forwards;
+     animation-timing-function: ease-in-out;
+     animation-fill-mode: forwards;
+ }
+
+ section .btn {
+     animation-name: sectionAnime;
+     animation-duration: 0.5s;
+     animation-fill-mode: forwards;
+     animation-timing-function: ease-in-out;
+     animation-delay: 0.25s;
+     animation-fill-mode: forwards;
+ }
+
+ .section-A {
+     background-image: url(Images/section-a.webp);
+ }
+
+ .section-A.inner {
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100vh;
+     width: 100%;
+ }
+
+ .section-B {
+     background-image: url(Images/section-b\ \(2\).webp);
+ }
+
+ .section-C {
+     background-image: url(Images/section-c.webp);
+ }
+
+ .section-D {
+     background-image: url(Images/section-d.webp);
+ }
+
+ .section-E {
+     background-image: url(Images/section-e.webp);
+ }
+
+ .btn {
+     display: inline-block;
+     cursor: pointer;
+     text-align: center;
+     border: 1px solid white;
+     padding: 15px 30px;
+     z-index: 2;
+     overflow: hidden;
+     z-index: 2;
+ }
+
+ .btn:hover {
+     color: black;
+
+ }
+
+ .btn::after {
+     content: '';
+     position: absolute;
+     background-color: white;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+     transform: translateY(100%);
+     z-index: -1;
+     color: black;
+     transition: 0.5s ease-in-out;
+
+ }
+
+ .btn:hover::after {
+     transform: translateY(0);
+
+ }
+
+
+ .arrow-down {
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     bottom: 20px;
+     animation-name: arrow;
+     animation-duration: 5s;
+     animation-fill-mode: forwards;
+     animation-timing-function: ease-in-out;
+     animation-iteration-count: infinite;
+     animation-delay: 0.2s;
+ }
+
+ /*footer*/
+ footer {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 5rem;
+     font-size: xx-small;
+     text-transform: uppercase;
+ }
+
+ footer a,
+ p {
+     margin: 0.98rem;
+ }
+
+ footer p {
+     opacity: 0.5;
+ }
+
+ footer a {
+     font-weight: 500;
+     cursor: pointer;
+ }
+
+
+
+
+
+ @keyframes sectionAnime {
+     from {
+         opacity: 0;
+         transform: translateY(100%);
+     }
+
+     to {
+         opacity: 100%;
+         transform: translateY(0);
+     }
+ }
+
+ @keyframes arrow {
+     0% {
+         opacity: 0;
+         transform: translateY(-10px);
+     }
+
+     50% {
+         opacity: 1;
+         transform: translateY(0);
+
+     }
+
+     100% {
+         opacity: 0;
+         transform: translateY(10px);
+     }
+ }
+
+ @media(max-width:991.98px) {
+     .navbar ul {
+         display: none;
+
+     }
+
+     .expand {
+         display: block;
+     }
+
+     .logo {
+         margin: auto;
+         width: 50%;
+         margin-top: 5px;
+     }
+
+     section h1 {
+         font-size: 20px;
+     }
+
+     section .inner {
+         left: 50px;
+         bottom: 0200px
+     }
+
+     footer {
+         flex-direction: column;
+         height: 7rem;
+     }
+
+     footer a,
+     p {
+         margin: 0.5rem;
+     }
+
+ }
